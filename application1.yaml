@@ -7,9 +7,9 @@ spec:
   destination:
     namespace: sample-app
     server: https://argocd-dns-acfcz47p.hcp.eastus.azmk8s.io:443
-  project: sample-project
+  project: default
   source:
-    path: sample-app/
+    path: .
     repoURL: https://github.com/akhil112/k8-gitops-pipelines
     targetRevision: HEAD
   syncPolicy:
