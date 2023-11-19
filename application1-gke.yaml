@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-app-gke
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://34.89.193.22
+  project: default
+  source:
+    path: .
+    repoURL: https://github.com/akhil112/k8-gitops-pipelines
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=false
+    automated:
+      selfHeal: true
+      prune: true
