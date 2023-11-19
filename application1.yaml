@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    namespace: sample-app
+    namespace: default
     server: https://argocd-dns-acfcz47p.hcp.eastus.azmk8s.io:443
   project: default
   source:
@@ -14,7 +14,7 @@ spec:
     targetRevision: HEAD
   syncPolicy:
     syncOptions:
-    - CreateNamespace=true
+    - CreateNamespace=false
     automated:
       selfHeal: true
       prune: true
