@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-app
+  namespace: argocd
+spec:
+  destination:
+    namespace: sample-app
+    server: https://argocd-dns-acfcz47p.hcp.eastus.azmk8s.io:443
+  project: sample-project
+  source:
+    path: sample-app/
+    repoURL: https://github.com/akhil112/k8-gitops-pipelines
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
