@@ -6,7 +6,7 @@ metadata:
 spec:
   destination:
     namespace: default
-    server: https://app-cluster-dns-m84lp1hu.hcp.eastus.azmk8s.io:443
+    server: https://kubernetes.default.svc
   project: default
   source:
     path: .
