@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: ./charts/hello-world
+    path: /charts/hello-world
     repoURL: https://github.com/akhil112/k8-gitops-pipelines
     targetRevision: HEAD
   syncPolicy:
